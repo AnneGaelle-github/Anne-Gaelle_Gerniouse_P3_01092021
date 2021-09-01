@@ -14,6 +14,7 @@
 
 /**********Mixins**********/
 
+
 /**********Body**********/
 
 h1, h2{
@@ -89,5 +90,57 @@ button:hover{
     background: linear-gradient(to bottom right, #9356DC, #FF79DA);
     box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 50%);
 }
+
 /**********Fonctionnement**********/
 
+.functioning{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin: 20px 0px 25px 0px;
+}
+.functioning a{
+    width: 230px;
+}
+.functioning h2{
+    padding: 10px 10px 10px 10px;
+    margin: 0px;
+}
+.group-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    justify-content: space-around;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 10%);
+    padding: 20px;
+    margin: 15px 5px 5px 20px;
+    align-items: baseline;
+}
+.box .fas{
+    color: #7E7E7E;
+    width: 15px;
+}
+.box:hover{
+    background-color: #f4eefc;
+}
+.number{
+    color: #FFFFFF;
+    font-size: 11px;
+    background-color: #9356DC;
+    position: relative;
+    padding: 4px 7px 3px 7px;
+    left: -30px;
+    border-radius: 50%;
+}
+.explication{
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
