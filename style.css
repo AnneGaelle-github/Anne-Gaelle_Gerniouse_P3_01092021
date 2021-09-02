@@ -239,3 +239,22 @@ button:hover{
     flex-direction: row;
     justify-content: space-around;
 }
+
+/**********Media queries**********/
+
+@media screen and (max-width: 550px){
+    .group-box{
+        flex-direction: column;
+        padding: 10px 15px 10px 5px;
+    }
+    .group-card{
+        flex-direction: column;
+    }
+    .footer .links{
+        flex-direction: column;
+        position: inherit;
+    }
+    .footer .logo{
+        position: inherit;
+    }
+}
