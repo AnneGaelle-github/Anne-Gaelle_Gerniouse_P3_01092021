@@ -242,7 +242,16 @@ button:hover{
 
 /**********Media queries**********/
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 940px)/*****Tablettes*****/{
+    .group-card a{
+        flex: 40%;
+    }
+    .footer .logo{
+        top: 100%;
+        left: 46%;
+    }
+}
+@media screen and (max-width: 550px)/*****Téléphones*****/{
     .group-box{
         flex-direction: column;
         padding: 10px 15px 10px 5px;
@@ -258,3 +267,4 @@ button:hover{
         position: inherit;
     }
 }
+

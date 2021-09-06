@@ -5,16 +5,51 @@
 	src: url("Roboto.eot") format("eot"),
 		 url("Roboto.woff") format("woff"),
 		 url("Roboto.ttf") format("truetype"),
-		 url("Roboto") format("svg");
+		 url("Roboto.svg") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
 
 /**********Variables**********/
 
+$color-purple: #9356DC;
+$color-pink: #FF79DA;
+$color-white: #FFFFFF;
+$color-grey: #F6F6F6;
+
 /**********Mixins**********/
 
+@mixin box-shadow{
+    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 20%);
+}
+@mixin direction-row{
+    flex-direction: row;
+}
+@mixin direction-column{
+    flex-direction: column;
+}
+
 /**********Body**********/
+
+h1, h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+h3{
+    font-size: 15px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+    font-size: 15px;
+}
 
 /**********Header**********/
 
@@ -22,7 +57,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    box-shadow: 0px 1px 7px 0px rgb(0 0 0 / 20%);
+    @include box-shadow;
 }
 .header img{
     margin: 15px;
@@ -37,8 +72,211 @@ input.text{
     text-align: center;
     font-weight: bold;
 }
+.search{
+    width: 100%;
+    border: none;
+    background-color: #EAEAEA;
+    margin: 0px;
+    padding: 12px;
+}
 
 /**********Description et Bouton**********/
 
+.title{
+    background-color: $color-grey;
+    text-align: center;
+    padding: 15px 10px 30px 10px;
+}
+button{
+    border: none;
+    background: linear-gradient(to bottom right, $color-pink, $color-purple);
+    color: $color-white;
+    padding: 15px 30px 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    @include box-shadow;
+}
+button:hover{
+    cursor: pointer;
+    background: linear-gradient(to bottom right, $color-purple, $color-pink);
+    @include box-shadow;
+}
+
 /**********Fonctionnement**********/
 
+.functioning{
+    display: flex;
+    padding: 8px;
+    margin: 20px 0px 25px 0px;
+    @include direction-column;
+}
+.functioning a{
+    width: 230px;
+}
+.functioning h2{
+    padding: 10px 10px 10px 10px;
+    margin: 0px;
+}
+.group-box{
+    display: flex;
+    align-items: center;
+    width: auto;
+    justify-content: space-around;
+    @include direction-row;
+}
+.box{
+    display: flex;
+    background-color: $color-grey;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 5px 5px 20px;
+    align-items: baseline;
+    @include box-shadow;
+    @include direction-row;
+}
+.box .fas{
+    color: #7E7E7E;
+    width: 15px;
+}
+.box:hover{
+    background-color: #f4eefc;
+}
+.number{
+    color: $color-white;
+    font-size: 11px;
+    background-color: $color-purple;
+    position: relative;
+    padding: 4px 7px 3px 7px;
+    left: -30px;
+    border-radius: 50%;
+}
+.explication{
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/**********Restaurants**********/
+
+.restaurants{
+    display: flex;
+    background-color: $color-grey;
+    padding: 35px 0px 40px 0px;
+    @include direction-column;
+}
+.restaurants h2{
+    margin: 10px 10px 0px 20px;
+}
+.group-card{
+    display: flex;
+    flex-wrap: wrap;
+    @include direction-row;
+}
+.card{
+    background-color: $color-white;
+    border-radius: 15px;
+    margin: 20px;
+    height: 210px;
+    position: relative;
+    @include box-shadow;
+}
+.group-card a{
+    flex: 20%;
+}
+.card img{
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+}
+.card .description{
+    height: 35%;
+    line-height: 5px;
+    padding: 8px 8px 8px 14px;
+}
+.new{
+    color: #008766;
+    background-color: #99E2D0;
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.card .fa-heart{
+    font-size: 24px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-weight: inherit;
+}
+
+/**********Footer**********/
+
+.footer{
+    background-color: #353535;
+    display: flex;
+    padding: 30px;
+    @include direction-column;
+}
+.footer .logo{
+    position: absolute;
+    top: 94%;
+    left: 47%;
+}
+.footer div{
+    display: flex;
+    @include direction-column;
+}
+.footer a{
+    text-decoration: none;
+    color: $color-white;
+    font-size: 12px;
+    line-height: 22px;
+}
+.footer .text-logo{
+    color: $color-white;
+    font-size: 16px;
+    font-family: "Shrikhand", cursive;
+    padding-bottom: 10px;
+    width: 100px;
+}
+.footer .links{
+    display: flex;
+    justify-content: space-around;
+    @include direction-row;
+}
+
+/**********Media queries**********/
+
+@media screen and (max-width: 940px)/*****Tablettes*****/{
+    .group-card a{
+        flex: 40%;
+    }
+    .footer .logo{
+        top: 100%;
+        left: 46%;
+    }
+}
+@media screen and (max-width: 550px)/*****Téléphones*****/{
+    .group-box{
+        padding: 10px 15px 10px 5px;
+        @include direction-column;
+    }
+    .group-card{
+        @include direction-column;
+    }
+    .footer .links{
+        position: inherit;
+        @include direction-column;
+    }
+    .footer .logo{
+        position: inherit;
+    }
+}
