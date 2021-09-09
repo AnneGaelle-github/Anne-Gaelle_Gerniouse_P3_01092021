@@ -201,13 +201,24 @@ input.text{
     right: 30px;
     font-weight: inherit;
 }
-.heart {
+.heart:hover .far{
+    z-index: 2;
+    opacity: 1;
+    
+    transition: opacity 0.6s ease-in-out;
+}
+.heart{
     position: absolute;
     right: 30px;
     bottom: 30px;
 }
-.heart:hover .fas {
+.heart:hover .fas{
     transform: scale(1.5);
+    background: linear-gradient(63deg, #FF79DA 0%, #9356DC 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    transform: scale(1);
+    transform-origin: 50% bottom;
 }
 .fa-heart{
     font-size: 24px;
@@ -216,8 +227,7 @@ input.text{
 .fa, .fas{
     font-weight: 900;
 }
-
-.heart .fas {
+.heart .fas{
     position: absolute;
     left: 0;
     bottom: 0;

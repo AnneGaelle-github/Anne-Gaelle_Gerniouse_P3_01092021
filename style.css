@@ -260,7 +260,50 @@ button:hover{
     justify-content: space-around;
 }
 
-/**********Media queries**********/
+/**********Page numéro 2 La palette du goût**********/
+
+
+/**********Bannière + coeur**********/
+
+.banner{
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 35px;
+}
+.banner img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.banner .title{
+    background-color: #F6F6F6;
+    border-radius: 40px 40px 0px 0px;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+}
+.banner h1{
+    font-family: "Shrikhand";
+    font-size: 26px;
+    font-weight: normal;
+    padding: 10px 10px 0px 20px;
+    margin-left: -75%;
+}
+.heart_page{
+    bottom: -25px;
+    position: absolute;
+    right: 30px;
+}
+
+
+
+/**********Media queries page La palette du goût**********/
+
+@media screen and (max-width: 940px){
+
+}
+
+/**********Media queries page d'accueil**********/
 
 @media screen and (max-width: 940px)/*****Tablettes*****/{
     .group-card a{
