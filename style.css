@@ -269,6 +269,15 @@ button:hover{
 
 /**********Page numéro 2 La palette du goût**********/
 
+/**********Header flèche**********/
+
+.header .fa-arrow-left {
+    font-size: 18px;
+    color: #353535;
+    position: absolute;
+    top: 16px;
+    left: 34px;
+}
 
 /**********Bannière + coeur**********/
 
