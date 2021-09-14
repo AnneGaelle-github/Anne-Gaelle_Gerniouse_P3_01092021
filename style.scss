@@ -22,16 +22,21 @@ $color-grey: #F6F6F6;
 @mixin box-shadow{
     box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 20%);
 }
-@mixin direction-row{
-    flex-direction: row;
-}
-@mixin direction-column{
-    flex-direction: column;
-}
 
 /**********Imports**********/
 
 @import "./components/button.scss";
+
+/**********Keyframes**********/
+
+@keyframes bounce{
+    to {
+        transform: translate3d(0, -4rem, 0);
+        color: $color-pink;
+        opacity: 0;
+        visibility: hidden; 
+    }
+}
 
 /**********Body**********/
 
@@ -54,12 +59,72 @@ a{
     color: black;
 }
 body{
-    max-width: 1440px;
-    margin: 0 auto;
     padding: 0px;
     font-family: "Roboto";
     font-size: 15px;
+    margin: 0 auto;
+    max-width: 1950px;
+    width: 100%;
 }
+
+/*
+.max-container {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+*/
+
+/**********Loading**********/
+
+.spinner-box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: bounce 1.6s ease-in-out both;
+    animation-delay: 3.5s;
+    .load{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    p{
+        color: $color-purple;
+        font-size: 40px;
+        font-family: 'Shrikhand', cursive;
+    }
+    .O{
+        animation: bounce 1.6s ease 0.2s infinite alternate;
+    }
+    .h{
+        animation: bounce 1.6s ease 0.4s infinite alternate;
+    }
+    .m{
+        animation: bounce 1.6s ease 0.6s infinite alternate;
+    }
+    .y{
+        animation: bounce 1.6s ease 0.8s infinite alternate;
+    }
+    .f{
+        animation: bounce 1.6s ease 1s infinite alternate;
+    }
+    .o{
+        animation: bounce 1.6s ease 1.2s infinite alternate;
+    }
+    .o-2{
+        animation: bounce 1.6s ease 1.4s infinite alternate;
+    }
+    .d{
+        animation: bounce 1.6s ease 1.6s infinite alternate;
+    }
+}
+
+
 
 /**********Header**********/
 
@@ -67,8 +132,6 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
-    max-width: 1440px;
-    margin: 0 auto;
     @include box-shadow;
     img{
         margin: 15px;
@@ -83,8 +146,6 @@ input.text{
     text-decoration: inherit;
     text-align: center;
     font-weight: bold;
-    max-width: 1440px;
-    margin: 0 auto;
 }
 .search{
     width: 100%;
@@ -101,21 +162,38 @@ input.text{
     text-align: center;
     padding: 15px 10px 30px 10px;
 }
+button{
+    border: none;
+    background: linear-gradient(to bottom right, $color-pink, $color-purple);
+    color: $color-white;
+    padding: 15px 30px 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 30%);
+    transition: all 400ms linear;
+    &:hover{
+    cursor: pointer;
+    background: linear-gradient(to bottom right, $color-purple, $color-pink);
+    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 50%);
+    }
+}
 
 /**********Fonctionnement**********/
 
 .functioning{
     display: flex;
     padding: 8px;
-    margin: 20px 0px 25px 0px;
-    @include direction-column;
-    .functioning a{
+    margin: 20px 0px 37px 0px;
+    flex-direction: column;
+    a{
         width: 230px;
     }
-        .functioning h2{
-            padding: 10px 10px 10px 10px;
-            margin: 0px;
-        }
+    h2{
+        padding: 10px 10px 10px 10px;
+        margin: 0px;
+    }
 }
 
 .group-box{
@@ -123,7 +201,7 @@ input.text{
     align-items: center;
     width: auto;
     justify-content: space-around;
-    @include direction-row;
+    flex-direction: row;
     .box{
         display: flex;
         background-color: $color-grey;
@@ -131,16 +209,16 @@ input.text{
         padding: 20px;
         margin: 15px 5px 5px 20px;
         align-items: baseline;
+        flex-direction: row;
         @include box-shadow;
-        @include direction-row;
     }
-        .box .fas{
-            color: #7E7E7E;
-            width: 15px;
-        }
-            .box:hover{
-                background-color: #f4eefc;
-            }
+    .box .fas{
+        color: #7E7E7E;
+        width: 15px;
+    }
+    .box:hover{
+        background-color: #f4eefc;
+    }
 }
 
 .number{
@@ -164,10 +242,8 @@ input.text{
     display: flex;
     background-color: $color-grey;
     padding: 35px 0px 40px 0px;
-    max-width: 1440px;
-    margin: 0 auto;
-    @include direction-column;
-    .restaurants h2{
+    flex-direction: column;
+    h2{
         margin: 10px 10px 0px 20px;
     }
 }
@@ -175,7 +251,7 @@ input.text{
 .group-card{
     display: flex;
     flex-wrap: wrap;
-    @include direction-row;
+    flex-direction: row;
     .card{
         background-color: $color-white;
         border-radius: 15px;
@@ -184,47 +260,40 @@ input.text{
         position: relative;
         @include box-shadow;
     }
-        .group-card a{
-            flex: 20%;
-        }
-            .card img{
-                width: 100%;
-                height: 65%;
-                object-fit: cover;
-                border-radius: 15px 15px 0px 0px;
-            }
-                .card .description{
-                    height: 35%;
-                    line-height: 5px;
-                    padding: 8px 8px 8px 14px;
-                }
-}
-
-.card .fa-heart{
-    font-size: 24px;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    font-weight: inherit;
+    a{
+        flex: 20%;
+    }
+    img{
+        width: 100%;
+        height: 65%;
+        object-fit: cover;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .description{
+        height: 35%;
+        line-height: 5px;
+        padding: 8px 8px 8px 14px;
+    }
 }
 
 .heart{
     position: absolute;
     right: 30px;
     bottom: 30px;
-        .heart:hover .far{
-            z-index: 2;
-            opacity: 1;
-            transition: opacity 0.6s ease-in-out;
-            }
-            .heart:hover .fas{
-                transform: scale(1.5);
-                background: linear-gradient(63deg, #FF79DA 0%, #9356DC 100%);
-                color: transparent;
-                -webkit-background-clip: text;
-                transform: scale(1);
-                transform-origin: 50% bottom;
-                }
+    &:hover .far{
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.6s ease-in-out;
+    }
+    &:hover .fas{
+        transform: scale(1.5);
+        background: linear-gradient(63deg, $color-pink 0%, $color-purple 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        transform: scale(1);
+        transform-origin: 50% bottom;
+        transition: all 0.3s ease;
+    }
 }
 
 .fa-heart{
@@ -259,37 +328,36 @@ input.text{
 .footer{
     background-color: #353535;
     display: flex;
-    flex-direction: column;
     padding: 30px;
     position: relative;
-    @include direction-column;
-    .footer div{
+    flex-direction: column;
+    div{
         display: flex;
-        @include direction-column;
+        flex-direction: column;
     }
-        .footer a{
-            text-decoration: none;
-            color: $color-white;
-            font-size: 12px;
-            line-height: 22px;
-        }
-            .footer .links{
-                display: flex;
-                justify-content: space-around;
-                @include direction-row;
-            }
-                .footer .logo{
-                    position: absolute;
-                    top: 40%;
-                    left: 47%;
-                }
-                    .footer .text-logo{
-                        color: $color-white;
-                        font-size: 16px;
-                        font-family: "Shrikhand", cursive;
-                        padding-bottom: 10px;
-                        width: 100px;
-                    }
+    a{
+        text-decoration: none;
+        color: $color-white;
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .links{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    .logo{
+        position: absolute;
+        top: 40%;
+        left: 47%;
+    }
+    .text-logo{
+        color: $color-white;
+        font-size: 16px;
+        font-family: "Shrikhand", cursive;
+        padding-bottom: 10px;
+        width: 100px;
+    }
 }
 
 /**********Page numéro 2 La palette du goût**********/
@@ -310,33 +378,35 @@ input.text{
     max-width: 100%;
     position: relative;
     margin-bottom: 35px;
-    .banner img{
+    img{
         width: 100%;
         height: 300px;
         object-fit: cover;
-        }
-        .banner h1{
-            font-family: "Shrikhand";
-            font-size: 26px;
-            font-weight: normal;
-            padding: 10px 10px 0px 35px;
-            position: absolute;
-            }
-            .banner .title{
-                background-color: #F6F6F6;
-                border-radius: 40px 40px 0px 0px;
-                width: 100%;
-                height: 80px;
-                position: absolute;
-                bottom: -43px;
-                }
+    }
+    h1{
+        font-family: "Shrikhand";
+        font-size: 26px;
+        font-weight: normal;
+        padding: 10px 10px 0px 35px;
+        position: absolute;
+    }
+    .title{
+        background-color: $color-grey;
+        border-radius: 40px 40px 0px 0px;
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        bottom: -43px;
+        box-sizing: border-box;
+    }
 }
 
 .heart_page{
-    bottom: -25px;
+    bottom: -67px;
     position: absolute;
-    right: 30px;
+    right: 20px;
 }
+
 
 /**********Menu**********/
 
@@ -346,7 +416,7 @@ input.text{
     flex-wrap: wrap;
     justify-content: space-between;
     flex: 1;
-    background-color: #F6F6F6;
+    background-color: $color-grey;
     padding: 2px 10px 0px 10px;
 }
 .carte{
@@ -364,33 +434,33 @@ input.text{
 
 .title-list{
     margin-bottom: 15px;
-    .title-list h3{
+    h3{
         font-weight: normal;
         padding-bottom: 0px;
         margin-bottom: 0px;
-        }
-        .title-list .underline{
-            height: 2px;
-            width: 18px;
-            background-color: #99E2D0;
-            padding-left: 20px;
-            margin-top: 5px;
-            }
+    }
+    .underline{
+        height: 2px;
+        width: 18px;
+        background-color: #99E2D0;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
 }
 
 
 .list{
     display: flex;
-    background-color: white;
+    background-color: $color-white;
     cursor: pointer;
     width: 100%;
     margin-bottom: 30px;
     box-sizing: border-box;
     border-radius: 15px;
-    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 20%);
     overflow: hidden;
     animation: loading-list 0.6s both;
-    .list .description{
+    @include box-shadow;
+    .description{
         padding: 10px;
         display: flex;
         flex-direction: column;
@@ -399,39 +469,38 @@ input.text{
         text-overflow: ellipsis;
         overflow: hidden;
         flex: 1;
-        }
-        .list .price{
-            font-weight: bold;
-            font-size: 15px;
-            align-self: flex-end;
-            margin: 0px 38px 13px 0px;
-            }
-            .list .check{
-                font-size: 18px;
-                padding: 20px;
-                color: #FFFFFF;
-                background-color: #99E2D0;
-                border-radius: 0px 15px 15px 0px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-right: -75px;
-                transition-duration: 0.8s;
-                }
-                .list:hover > .check{
-                    margin-right: 0px;
-                    }
-                    .list:hover .fa-check-circle{
-                        transition: all 0.3s 0.3s;
-                        transform: rotate(360deg);
-                        }
+    }
+    .price{
+        font-weight: bold;
+        font-size: 15px;
+        align-self: flex-end;
+        margin: 0px 38px 13px 0px;
+    }
+    .check{
+        font-size: 18px;
+        padding: 20px;
+        color: $color-white;
+        background-color: #99E2D0;
+        border-radius: 0px 15px 15px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -75px;
+        transition-duration: 0.8s;
+    }
+    &:hover > .check{
+        margin-right: 0px;
+    }
+    &:hover .fa-check-circle{
+        transition: all 0.3s 0.3s;
+        transform: rotate(360deg);
+    }
 }
-
 
 /**********Bouton**********/
 
 .order{
-    background-color: #F6F6F6;
+    background-color: $color-grey;
     text-align: center;
     padding: 20px 0px 30px 0px;
 }
@@ -446,10 +515,13 @@ input.text{
         flex-wrap: wrap;
         padding: 10px 50px 10px 0px;
     }
+    .heart_page{
+        right: 4px;
+    }
 }
 
 
-/**********Media queries**********/
+/**********Media queries Accueil**********/
 
 @media screen and (max-width: 940px)/*****Tablettes*****/{
     .group-card a{
@@ -459,16 +531,16 @@ input.text{
 @media screen and (max-width: 550px)/*****Téléphones*****/{
     .group-box{
         padding: 10px 15px 10px 5px;
-        @include direction-column;
+        flex-direction: column;
     }
     .group-card{
-        @include direction-column;
+        flex-direction: column;
     }
     .footer .links{
         position: inherit;
-        @include direction-column;
+        flex-direction: column;
     }
     .footer .logo{
-        position: inherit;
+        position: static;
     }
 }
