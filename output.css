@@ -516,8 +516,14 @@ button:hover {
   padding: 20px 0px 30px 0px;
 }
 
-/**********Media queries, page La palette du goût**********/
+/**********Media queries**********/
 @media screen and (max-width: 940px) {
+  /*****Page Accueil*****/
+  .group-card a {
+    flex: 40%;
+  }
+
+  /*****Pages Menus*****/
   .menu {
     display: flex;
     flex-direction: column;
@@ -529,13 +535,8 @@ button:hover {
     right: 4px;
   }
 }
-/**********Media queries Accueil**********/
-@media screen and (max-width: 940px) {
-  .group-card a {
-    flex: 40%;
-  }
-}
 @media screen and (max-width: 550px) {
+  /*****Page Accueil*****/
   .group-box {
     padding: 10px 15px 10px 5px;
     flex-direction: column;
@@ -552,6 +553,12 @@ button:hover {
 
   .footer .logo {
     position: static;
+  }
+
+  /*****Pages Menus*****/
+  .banner h1 {
+    padding: 20px 10px 0px 30px;
+    font-size: 20px;
   }
 }
 

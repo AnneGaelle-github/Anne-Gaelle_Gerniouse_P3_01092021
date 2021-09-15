@@ -524,9 +524,19 @@ button{
 }
 
 
-/**********Media queries, page La palette du goût**********/
 
-@media screen and (max-width: 940px){
+/**********Media queries**********/
+
+@media screen and (max-width: 940px)/*****Tablettes*****/{
+
+    /*****Page Accueil*****/
+
+    .group-card a{
+        flex: 40%;
+    }
+
+    /*****Pages Menus*****/
+
     .menu{
         display: flex;
         flex-direction: column;
@@ -539,14 +549,10 @@ button{
 }
 
 
-/**********Media queries Accueil**********/
-
-@media screen and (max-width: 940px)/*****Tablettes*****/{
-    .group-card a{
-        flex: 40%;
-    }
-}
 @media screen and (max-width: 550px)/*****Téléphones*****/{
+
+    /*****Page Accueil*****/
+
     .group-box{
         padding: 10px 15px 10px 5px;
         flex-direction: column;
@@ -560,5 +566,12 @@ button{
     }
     .footer .logo{
         position: static;
+    }
+
+    /*****Pages Menus*****/
+
+    .banner h1{
+        padding: 20px 10px 0px 30px;
+        font-size: 20px;
     }
 }
