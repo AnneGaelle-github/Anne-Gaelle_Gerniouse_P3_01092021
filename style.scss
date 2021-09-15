@@ -460,6 +460,24 @@ button{
     overflow: hidden;
     animation: loading-list 0.6s both;
     @include box-shadow;
+    .list:nth-child(2){
+        animation-delay: 0.2s;
+    }
+    .list:nth-child(3){
+        animation-delay: 0.3s;
+    }
+    @keyframes list{
+        0%{
+            opacity: 0;
+            transform: translateY(50%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+
     .description{
         padding: 10px;
         display: flex;
