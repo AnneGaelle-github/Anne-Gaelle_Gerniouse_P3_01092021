@@ -282,7 +282,7 @@ button{
     bottom: 30px;
     &:hover .far{
         z-index: 2;
-        opacity: 1;
+        opacity: 0;
         transition: opacity 0.6s ease-in-out;
     }
     &:hover .fas{
@@ -465,6 +465,12 @@ button{
     }
     .list:nth-child(3){
         animation-delay: 0.3s;
+    }
+    .list:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+    .list:nth-child(5) {
+        animation-delay: 0.5s;
     }
     @keyframes list{
         0%{
