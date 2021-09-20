@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/**********Polices**********/
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto.eot") format("eot"), url("Roboto.woff") format("woff"), url("Roboto.ttf") format("truetype"), url("Roboto.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 /**********Variables**********/
 /**********Mixins**********/
 /**********Imports**********/
@@ -30,16 +23,13 @@ button.button:hover {
   box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-/**********Keyframes**********/
-@keyframes bounce {
-  to {
-    transform: translate3d(0, -4rem, 0);
-    color: #FF79DA;
-    opacity: 0;
-    visibility: hidden;
-  }
+/**********Polices**********/
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto.eot") format("eot"), url("Roboto.woff") format("woff"), url("Roboto.ttf") format("truetype"), url("Roboto.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-/**********Body**********/
 h1, h2 {
   font-size: 20px;
   font-weight: bold;
@@ -71,6 +61,16 @@ body {
   width: 100%;
 }
 
+/**********Keyframes**********/
+@keyframes bounce {
+  to {
+    transform: translate3d(0, -4rem, 0);
+    color: #FF79DA;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/**********Body**********/
 .max-container {
   margin: 0 auto;
   max-width: 1950px;
@@ -182,9 +182,8 @@ button:hover {
 /**********Fonctionnement**********/
 .functioning {
   display: flex;
-  padding: 8px;
-  margin-top: 20px;
-  margin-bottom: 37px;
+  margin-top: 25px;
+  margin-bottom: 48px;
   flex-direction: column;
 }
 .functioning a {
@@ -192,6 +191,7 @@ button:hover {
 }
 .functioning h2 {
   padding: 10px 10px 10px 10px;
+  padding-left: 20px;
   margin: 0px;
 }
 
