@@ -1,4 +1,3 @@
-
 /**********Variables**********/
 
 $color-purple: #9356DC;
@@ -15,18 +14,12 @@ $color-grey: #F6F6F6;
 /**********Imports**********/
 
 @import "./components/button.scss";
+@import "./components/heart.scss";
+@import "./components/loading.scss";
 @import "./base/polices.scss";
+@import "./layouts/header.scss";
+@import "./layouts/footer.scss";
 
-/**********Keyframes**********/
-
-@keyframes bounce{
-    to {
-        transform: translate3d(0, -4rem, 0);
-        color: $color-pink;
-        opacity: 0;
-        visibility: hidden; 
-    }
-}
 
 /**********Body**********/
 
@@ -35,71 +28,6 @@ $color-grey: #F6F6F6;
     max-width: 1950px;
     width: 100%;
     justify-content: center;
-}
-
-
-/**********Loading**********/
-
-.spinner-box{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: $color-white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    animation: bounce 1.6s ease-in-out both;
-    animation-delay: 3.5s;
-    .load{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    p{
-        color: $color-purple;
-        font-size: 40px;
-        font-family: 'Shrikhand', cursive;
-    }
-    .O{
-        animation: bounce 1.6s ease 0.2s infinite alternate;
-    }
-    .h{
-        animation: bounce 1.6s ease 0.4s infinite alternate;
-    }
-    .m{
-        animation: bounce 1.6s ease 0.6s infinite alternate;
-    }
-    .y{
-        animation: bounce 1.6s ease 0.8s infinite alternate;
-    }
-    .f{
-        animation: bounce 1.6s ease 1s infinite alternate;
-    }
-    .o{
-        animation: bounce 1.6s ease 1.2s infinite alternate;
-    }
-    .o-2{
-        animation: bounce 1.6s ease 1.4s infinite alternate;
-    }
-    .d{
-        animation: bounce 1.6s ease 1.6s infinite alternate;
-    }
-}
-
-
-
-/**********Header**********/
-
-.header{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    @include box-shadow;
-    img{
-        margin: 15px;
-        width: 130px;
-    }
 }
 
 /**********Barre de recherche**********/
@@ -125,23 +53,7 @@ input.text{
     text-align: center;
     padding: 15px 10px 30px 10px;
 }
-button{
-    border: none;
-    background: linear-gradient(to bottom right, $color-pink, $color-purple);
-    color: $color-white;
-    padding: 15px 30px 15px 30px;
-    margin: 10px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: bold;
-    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 30%);
-    transition: all 400ms linear;
-    &:hover{
-    cursor: pointer;
-    background: linear-gradient(to bottom right, $color-purple, $color-pink);
-    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 50%);
-    }
-}
+
 
 /**********Fonctionnement**********/
 
@@ -240,40 +152,6 @@ button{
     }
 }
 
-.heart{
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-    &:hover .far{
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 0.6s ease-in-out;
-    }
-    &:hover .fas{
-        transform: scale(1.5);
-        background: linear-gradient(63deg, $color-pink 0%, $color-purple 100%);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        transform: scale(1);
-        transform-origin: 50% bottom;
-        transition: all 0.3s ease;
-    }
-}
-
-.fa-heart{
-    font-size: 24px;
-    font-weight: inherit;
-}
-.fa, .fas{
-    font-weight: 900;
-}
-.heart .fas{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: scale(0);
-}
 .new{
     color: #008766;
     background-color: #99E2D0;
@@ -288,54 +166,8 @@ button{
     right: 10px;
 }
 
-/**********Footer**********/
+/**********Pages numéros**********/
 
-.footer{
-    background-color: #353535;
-    display: flex;
-    padding: 30px;
-    position: relative;
-    flex-direction: column;
-    div{
-        display: flex;
-        flex-direction: column;
-    }
-    a{
-        text-decoration: none;
-        color: $color-white;
-        font-size: 12px;
-        line-height: 22px;
-    }
-    .links{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-    }
-    .logo{
-        position: absolute;
-        top: 40%;
-        left: 47%;
-    }
-    .text-logo{
-        color: $color-white;
-        font-size: 16px;
-        font-family: "Shrikhand", cursive;
-        padding-bottom: 10px;
-        width: 100px;
-    }
-}
-
-/**********Page numéro 2 La palette du goût**********/
-
-/**********Header flèche**********/
-
-.header .fa-arrow-left {
-    font-size: 18px;
-    color: #353535;
-    position: absolute;
-    top: 16px;
-    left: 34px;
-}
 
 /**********Bannière + coeur**********/
 
@@ -364,12 +196,6 @@ button{
         bottom: -43px;
         box-sizing: border-box;
     }
-}
-
-.heart_page{
-    bottom: -67px;
-    position: absolute;
-    right: 20px;
 }
 
 
@@ -412,7 +238,6 @@ button{
         margin-top: 5px;
     }
 }
-
 
 .list{
     display: flex;
@@ -495,7 +320,6 @@ button{
 }
 
 
-
 /**********Media queries**********/
 
 @media screen and (max-width: 940px)/*****Tablettes*****/{
@@ -514,11 +338,7 @@ button{
         flex-wrap: wrap;
         padding: 10px 50px 10px 0px;
     }
-    .heart_page{
-        right: 4px;
-    }
 }
-
 
 @media screen and (max-width: 550px)/*****Téléphones*****/{
 
@@ -531,14 +351,7 @@ button{
     .group-card{
         flex-direction: column;
     }
-    .footer .links{
-        position: inherit;
-        flex-direction: column;
-    }
-    .footer .logo{
-        position: static;
-    }
-
+    
     /*****Pages Menus*****/
 
     .banner h1{

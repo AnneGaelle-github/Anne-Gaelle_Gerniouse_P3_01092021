@@ -1,0 +1,47 @@
+/**********Footer**********/
+
+.footer{
+    background-color: #353535;
+    display: flex;
+    padding: 30px;
+    position: relative;
+    flex-direction: column;
+    div{
+        display: flex;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+        color: $color-white;
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .links{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    .logo{
+        position: absolute;
+        top: 40%;
+        left: 47%;
+    }
+    .text-logo{
+        color: $color-white;
+        font-size: 16px;
+        font-family: "Shrikhand", cursive;
+        padding-bottom: 10px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 550px)/*****Téléphones*****/{
+
+    .footer .links{
+        position: inherit;
+        flex-direction: column;
+    }
+    .footer .logo{
+        position: static;
+    }
+}

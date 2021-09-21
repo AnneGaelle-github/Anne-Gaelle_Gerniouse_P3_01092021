@@ -1,0 +1,24 @@
+/**********Header**********/
+
+.header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    @include box-shadow;
+    img{
+        margin: 15px;
+        width: 130px;
+    }
+}
+
+/**********Pages numéros**********/
+
+/**********Header flèche**********/
+
+.header .fa-arrow-left {
+    font-size: 18px;
+    color: #353535;
+    position: absolute;
+    top: 16px;
+    left: 34px;
+}
