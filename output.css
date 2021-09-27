@@ -3,8 +3,8 @@
 /**********Variables**********/
 /**********Mixins**********/
 /**********Bouton**********/
-@import url("https://fonts.googleapis.com/css2? family= Roboto & display=swap");
-@import url("https://fonts.googleapis.com/css2? family= Shrikhand & display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 button.button {
   border: none;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
