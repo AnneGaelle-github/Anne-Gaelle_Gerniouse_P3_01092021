@@ -1,0 +1,66 @@
+/**********Fonctionnement**********/
+
+.functioning{
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 48px;
+    flex-direction: column;
+    a{
+        width: 230px;
+    }
+    h2{
+        padding: 10px 10px 10px 10px;
+        padding-left: 20px;
+        margin: 0px;
+    }
+}
+
+.group-box{
+    display: flex;
+    align-items: center;
+    width: auto;
+    justify-content: space-around;
+    flex-direction: row;
+    .box{
+        display: flex;
+        background-color: $color-grey;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 15px 5px 5px 20px;
+        align-items: baseline;
+        flex-direction: row;
+        @include box-shadow;
+    }
+    .box .fas{
+        color: #7E7E7E;
+        width: 15px;
+    }
+    .box:hover{
+        background-color: #f4eefc;
+    }
+}
+
+.number{
+    color: $color-white;
+    font-size: 11px;
+    background-color: $color-purple;
+    position: relative;
+    padding: 4px 7px 3px 7px;
+    left: -30px;
+    border-radius: 50%;
+}
+.explication{
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 550px)/*****Téléphones*****/{
+
+    /*****Page Accueil*****/
+
+    .group-box{
+        padding: 10px 15px 10px 5px;
+        flex-direction: column;
+    }
+}

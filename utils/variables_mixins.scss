@@ -1,0 +1,12 @@
+/**********Variables**********/
+
+$color-purple: #9356DC;
+$color-pink: #FF79DA;
+$color-white: #FFFFFF;
+$color-grey: #F6F6F6;
+
+/**********Mixins**********/
+
+@mixin box-shadow{
+    box-shadow: 1px 4px 8px 0px rgb(0 0 0 / 20%);
+}
